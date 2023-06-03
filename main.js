@@ -298,7 +298,7 @@ function showThirdCard(data){
 }
 
 async function getWeather(city){
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=5`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=5`;
     const response = await fetch(url);
     return await response.json();
 }
@@ -321,28 +321,28 @@ async function logicCard(city) {
 
 async function logicSecondCard(){
     let city = 'Москва';
-    let url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}}`
+    let url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}}`
     let response = await fetch(url);
     const dataMSC = await response.json();
     const infoMSC = conditions.find(
         (obj) => obj.code === dataMSC.current.condition.code
     );
     city = 'Санкт Петербург';
-    url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}}`
+    url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}}`
     response = await fetch(url);
     const dataSPB = await response.json();
     const infoSPB = conditions.find(
         (obj) => obj.code === dataSPB.current.condition.code
     );
     city = 'Воронеж';
-    url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}}`
+    url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}}`
     response = await fetch(url);
     const dataVRN = await response.json();
     const infoVRN = conditions.find(
         (obj) => obj.code === dataVRN.current.condition.code
     );
     city = 'Казань';
-    url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}}`
+    url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}}`
     response = await fetch(url);
     const dataKAZ = await response.json();
     const infoKAZ = conditions.find(
